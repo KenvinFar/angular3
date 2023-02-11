@@ -8,11 +8,13 @@ import { PagesComponent } from './pages.component';
 
 const routes: Routes = [
   //rutas protegidas
-  {path:'dashboard', component:PagesComponent},
-  {path:'', component:PagesComponent},
-  {path:'category', component:CategoryComponent},
-  {path:'products', component:PagesComponent},
-  
+  { path: 'pages',component: PagesComponent,children:[
+    { path: 'dashboard', component: DashboardComponent },
+    { path: 'category', component: CategoryComponent },
+    { path: 'product', component: PagesComponent },
+    //{ path: 'product', component, PagesComponent}
+  ]
+},
 ];
 
 @NgModule({
